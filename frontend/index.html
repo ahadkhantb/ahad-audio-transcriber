@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHAD Audio Transcriber</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">AA</div>
+      <div>
+        <h1>AHAD Audio Transcriber</h1>
+        <p>Audio → Text → Timestamp → JSON</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label class="field-label" for="audio">অডিও ফাইল নির্বাচন করো</label>
+      <input id="audio" type="file" accept="audio/*,video/*">
+      <div class="row">
+        <div class="field">
+          <label for="language">ভাষা</label>
+          <select id="language">
+            <option value="bn">বাংলা</option>
+            <option value="en">English</option>
+            <option value="">Auto detect</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="format">Export format</label>
+          <select id="format">
+            <option value="json">JSON</option>
+            <option value="txt">TXT</option>
+            <option value="srt">SRT</option>
+          </select>
+        </div>
+      </div>
+      <button id="run">Transcribe Audio</button>
+      <p id="status" role="status">প্রথমবার Backend চালু হতে কিছুটা সময় লাগতে পারে।</p>
+      <div class="progress"><div id="bar"></div></div>
+    </section>
+
+    <section class="panel">
+      <div class="result-head">
+        <h2>Transcript Preview</h2>
+        <button id="download" class="secondary" disabled>Download file</button>
+      </div>
+      <pre id="preview">এখানে ট্রান্সক্রিপ্ট দেখা যাবে।</pre>
+    </section>
+    <footer>Free-tier hosting has usage and processing limits. Do not upload private recordings to a public deployment.</footer>
+  </main>
+</body>
+</html>
